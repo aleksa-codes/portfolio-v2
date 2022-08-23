@@ -8,7 +8,8 @@ import Document, {
 } from 'next/document';
 import Script from 'next/script';
 
-const APP_NAME = 'aleksa.codes';
+// PWA:
+// const APP_NAME = 'aleksa.codes';
 // const APP_DESCRIPTION = "Aleksa's personal website";
 
 /////////////////////////////////////////////////////////////
@@ -76,17 +77,17 @@ class MyDocument extends Document {
       <Html lang='en'>
         <Head>
           {/* PWA start */}
-          <meta name='application-name' content={APP_NAME} />
+          {/* <meta name='application-name' content={APP_NAME} />
           <meta name='apple-mobile-web-app-capable' content='yes' />
           <meta
             name='apple-mobile-web-app-status-bar-style'
             content='default'
           />
-          <meta name='apple-mobile-web-app-title' content={APP_NAME} />
+          <meta name='apple-mobile-web-app-title' content={APP_NAME} /> */}
           {/* <meta name='description' content={APP_DESCRIPTION} /> */}
-          <meta name='format-detection' content='telephone=no' />
+          {/* <meta name='format-detection' content='telephone=no' />
           <meta name='mobile-web-app-capable' content='yes' />
-          <meta name='theme-color' content='#000000' />
+          <meta name='theme-color' content='#000000' /> */}
           {/* TIP: set viewport head meta tag in _app.js, otherwise it will show a warning */}
           {/* <meta name='viewport' content='minimum-scale=1, initial-scale=1, width=device-width, shrink-to-fit=no, viewport-fit=cover' /> */}
           {/* <link
@@ -101,12 +102,18 @@ class MyDocument extends Document {
               href='https://fonts.googleapis.com/css2?family=Roboto&display=swap'
               rel='stylesheet'
             /> */}
+          <link rel='preconnect' href='https://fonts.googleapis.com' />
           <link
-            href='https://fonts.googleapis.com/css2?family=Source+Code+Pro&display=swap'
+            rel='preconnect'
+            href='https://fonts.gstatic.com'
+            crossOrigin='true'
+          />
+          <link
+            href='https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap'
             rel='stylesheet'
           />
         </Head>
-        <body className='transition-[background-color] duration-500'>
+        <body>
           <Main />
           <NextScript />
           <Script

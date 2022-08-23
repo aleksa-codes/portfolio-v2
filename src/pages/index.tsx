@@ -1,5 +1,4 @@
 import type { NextPage } from 'next';
-import Head from 'next/head';
 import { motion } from 'framer-motion';
 import Typed from 'react-typed';
 import Image from 'next/image';
@@ -10,10 +9,6 @@ const text = 'Hello World';
 const Home: NextPage = () => {
   return (
     <PageTransition>
-      <Head>
-        <title>Home</title>
-        <link rel='icon' href='/favicon.ico' />
-      </Head>
       <main>
         <h1 className='flex flex-row items-center justify-start'>
           <Typed
@@ -34,8 +29,8 @@ const Home: NextPage = () => {
                 duration: 2.5,
                 ease: 'easeOut',
                 delay: 3.5,
-                repeat: 3,
-                repeatDelay: 4
+                repeat: Infinity,
+                repeatDelay: 2.5
               }
             }}
           >
@@ -53,7 +48,9 @@ const Home: NextPage = () => {
           I design and build{' '}
           <span className='highlight'>things for the web.</span>
         </h2>
-        <h3>Computer Science Student and Web Developer. Based in Belgrade.</h3>
+        <h4 className='opacity-80'>
+          Computer Science Student and Web Developer. Based in Belgrade.
+        </h4>
       </main>
     </PageTransition>
   );

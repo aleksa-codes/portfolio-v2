@@ -1,10 +1,14 @@
 import PageTransition from '../components/PageTransition';
 import Avatar from '../components/utilities/Avatar';
 import { Send, Eraser } from 'tabler-icons-react';
+import Seo from '../components/SEO';
+
+const title = 'Contact';
 
 const Contact = () => {
   return (
     <PageTransition>
+      <Seo title={title} />
       <h1>Contact me</h1>
       <div className='flex flex-col items-center h-full justify-center'>
         <div className='mt-[-36px] flex flex-row items-center justify-center gap-4'>
@@ -20,8 +24,8 @@ const Contact = () => {
           action='https://formsubmit.co/9f2e38d7a97aa8e4fad043b4b83b9558'
           method='POST'
         >
-          <div className='form-group flex flex-row items-center justify-between w-full gap-4'>
-            <div className='form-label w-full'>
+          <div className='flex flex-row items-center justify-between w-full gap-4'>
+            <div className='w-full'>
               <label htmlFor='name-field'>
                 Name
                 <div id='name-field'>
@@ -35,7 +39,7 @@ const Contact = () => {
                 </div>
               </label>
             </div>
-            <div className='form-label w-full'>
+            <div className='w-full'>
               <label htmlFor='email-field'>
                 Email
                 <div id='email-field'>
@@ -72,20 +76,20 @@ const Contact = () => {
                   placeholder='Your Message Here'
                   className='textarea textarea-bordered w-full'
                   name='message'
-                  rows={5}
+                  rows={4}
                   required
                 ></textarea>
               </div>
             </label>
           </div>
-          <div className='form-group flex flex-row items-center justify-start gap-2 w-full my-2'>
+          <div className='flex flex-row items-center justify-start gap-2 w-full my-2'>
             <button type='submit' className='btn btn-primary'>
               Send
-              <Send size={20} strokeWidth={2} />
+              <Send size={20} strokeWidth={2} className='ml-1' />
             </button>
             <button type='reset' className='btn btn-secondary'>
               Clear
-              <Eraser size={20} strokeWidth={2} />
+              <Eraser size={20} strokeWidth={2} className='ml-1' />
             </button>
           </div>
         </form>

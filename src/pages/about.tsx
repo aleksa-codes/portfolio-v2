@@ -1,7 +1,12 @@
 import PageTransition from '../components/PageTransition';
+import Seo from '../components/SEO';
+
+const title = 'About';
+
 const About = () => {
   return (
     <PageTransition>
+      <Seo title={title} />
       <h1>About me</h1>
       <p>
         Born in 1996, I grew up during the digital rise. As a teenager, I

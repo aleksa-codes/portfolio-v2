@@ -1,4 +1,5 @@
 /** @type {import('tailwindcss').Config} */
+
 module.exports = {
   content: [
     './src/pages/**/*.{js,ts,jsx,tsx}',
@@ -6,7 +7,11 @@ module.exports = {
   ],
   plugins: [require('@tailwindcss/typography'), require('daisyui')],
   theme: {
-    extend: {}
+    extend: {
+      fontFamily: {
+        sans: ['"Poppins"', 'sans-serif']
+      }
+    }
   },
   daisyui: {
     themes: ['winter', 'night']
