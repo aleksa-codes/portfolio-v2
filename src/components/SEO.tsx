@@ -62,8 +62,6 @@ export default function Seo({
       />
 
       <link rel='canonical' href={canonical ?? DOMAIN} />
-
-      <link rel='shortcut icon' href='/favicon.ico' />
     </Head>
   );
 }
