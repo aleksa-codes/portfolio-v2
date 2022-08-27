@@ -7,6 +7,6 @@ const nextConfig = {
 module.exports = {
   ...nextConfig,
   images: {
-    domains: ['picsum.photos']
+    domains: ['picsum.photos', 'github.githubassets.com']
   }
 };

@@ -20,7 +20,7 @@ const navItems = [
   }
 ];
 
-const Navbar = () => {
+const Header = () => {
   return (
     <div className='navbar bg-base-100 pt-4'>
       <div className='flex-1'>
@@ -36,7 +36,7 @@ const Navbar = () => {
       <div className='flex-none'>
         <ul className='menu menu-horizontal p-0 hidden md:flex'>
           {navItems.map(({ href, label }) => (
-            <li key={href} className='mx-1'>
+            <li key={href} className='mr-[1px]'>
               <Link href={href}>
                 <a>{label}</a>
               </Link>
@@ -81,4 +81,4 @@ const Navbar = () => {
   );
 };
 
-export default Navbar;
+export default Header;

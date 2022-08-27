@@ -1,5 +1,5 @@
-import Link from 'next/link';
 import { useEffect, useState } from 'react';
+import Link from 'next/link';
 import PageTransition from '../components/PageTransition';
 import Seo from '../components/SEO';
 

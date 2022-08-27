@@ -1,8 +1,9 @@
 import '../styles/globals.css';
+import '@code-hike/mdx/styles';
 import type { AppProps } from 'next/app';
+import { ThemeProvider } from 'next-themes';
 import Head from 'next/head';
 import Seo from '../components/SEO';
-import { ThemeProvider } from 'next-themes';
 import Layout from '../components/Layout';
 
 interface MyAppProps extends AppProps {

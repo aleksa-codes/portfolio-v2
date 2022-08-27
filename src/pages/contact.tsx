@@ -1,5 +1,5 @@
 import PageTransition from '../components/PageTransition';
-import Avatar from '../components/utilities/Avatar';
+import Avatar from '../components/svg/Avatar';
 import { Send, Eraser } from 'tabler-icons-react';
 import Seo from '../components/SEO';
 

@@ -1,7 +1,7 @@
 import PageTransition from '../components/PageTransition';
-import Seo from '../components/SEO';
 import Image from 'next/image';
 import { BrandGithub, ExternalLink } from 'tabler-icons-react';
+import Seo from '../components/SEO';
 
 const title = 'Projects';
 
@@ -11,24 +11,24 @@ const projects = [
     desc: 'Laudantium iste repellat et. Et officiis corporis. At est placeat voluptas aut. Soluta dolor quae quae tempora. Voluptatibus quibusdam natus. Facilis ea repellendus expedita voluptatum rerum autem.',
     tech: ['HTML', 'CSS', 'JavaScript'],
     github: 'https://github.com/aleksastojsic',
-    website: 'https://example.com',
-    img: 'https://picsum.photos/400/400?random=1'
+    demo: 'https://example.com',
+    img: 'https://picsum.photos/800/600?random=24'
   },
   {
     name: 'Project #2',
     desc: 'Laudantium iste repellat et. Et officiis corporis. At est placeat voluptas aut. Soluta dolor quae quae tempora. Voluptatibus quibusdam natus. Facilis ea repellendus expedita voluptatum rerum autem.',
     tech: ['HTML', 'CSS', 'JavaScript'],
     github: 'https://github.com/aleksastojsic',
-    website: 'https://example.com',
-    img: 'https://picsum.photos/400/400?random=2'
+    demo: 'https://example.com',
+    img: 'https://picsum.photos/800/600?random=8'
   },
   {
     name: 'Project #3',
     desc: 'Laudantium iste repellat et. Et officiis corporis. At est placeat voluptas aut. Soluta dolor quae quae tempora.',
     tech: ['HTML', 'CSS', 'JavaScript'],
     github: 'https://github.com/aleksastojsic',
-    website: 'https://example.com',
-    img: 'https://picsum.photos/400/400?random=3'
+    demo: 'https://example.com',
+    img: 'https://picsum.photos/800/600?random=3'
   }
 ];
 
@@ -37,76 +37,89 @@ const Projects = () => {
     <PageTransition>
       <Seo title={title} />
       <h1>Projects</h1>
-      <div className='flex flex-col gap-8 md:gap-16'>
-        {projects.map(({ name, desc, tech, github, website, img }, index) => (
-          <div
-            key={index}
-            className={`flex flex-col-reverse justify-between items-center gap-4 ${
-              index % 2 === 0 ? 'md:flex-row-reverse' : 'md:flex-row'
-            }`}
-          >
-            <div
-              className={`flex flex-col w-full md:w-1/2 text-left ${
-                index % 2 === 0 ? 'md:text-left' : 'md:text-right'
-              }`}
-            >
-              <div className='flex flex-col'>
+      <div className='flex flex-col gap-4 md:gap-4'>
+        {/* map and add <div className='divider'></div> after each project except the last one */}
+        {projects.map(
+          ({ name, desc, tech, github, demo, img }, index, array) => (
+            <div key={index}>
+              <div
+                className={`flex flex-col-reverse justify-between items-center gap-8 ${
+                  index % 2 === 0 ? 'md:flex-row-reverse' : 'md:flex-row'
+                }`}
+              >
                 <div
-                  className={`text-3xl font-bold text-center ${
+                  className={`flex flex-col w-full md:w-1/2 text-left ${
                     index % 2 === 0 ? 'md:text-left' : 'md:text-right'
                   }`}
                 >
-                  {name}
-                </div>
-                <p className='text-base'>{desc}</p>
-              </div>
-              <div
-                className={`flex gap-4 flex-row justify-start ${
-                  index % 2 === 0 ? 'md:flex-row' : 'md:flex-row-reverse'
-                }`}
-              >
-                <p className='text-base font-bold highlight w-fit'>
-                  {tech.join(' • ')}
-                </p>
-              </div>
+                  <div className='flex flex-col'>
+                    <div
+                      className={`text-3xl font-bold text-base-content text-center ${
+                        index % 2 === 0 ? 'md:text-left' : 'md:text-right'
+                      }`}
+                    >
+                      {name}
+                    </div>
+                    <p className='text-base'>{desc}</p>
+                  </div>
+                  <div
+                    className={`flex gap-4 flex-row justify-start  ${
+                      index % 2 === 0 ? 'md:flex-row' : 'md:flex-row-reverse'
+                    }`}
+                  >
+                    <p className='text-base font-bold highlight w-fit'>
+                      {tech.join(' • ')}
+                    </p>
+                  </div>
 
-              <div
-                className={`flex gap-4 flex-row justify-start ${
-                  index % 2 === 0 ? 'md:flex-row' : 'md:flex-row-reverse'
-                }`}
-              >
+                  <div
+                    className={`flex gap-4 flex-row justify-start text-base ${
+                      index % 2 === 0 ? 'md:flex-row' : 'md:flex-row-reverse'
+                    }`}
+                  >
+                    <a
+                      href={demo}
+                      target='_blank'
+                      rel='noopener noreferrer'
+                      className='hover:text-primary no-underline flex flex-row items-center'
+                    >
+                      <ExternalLink size={32} />
+                      <span className='ml-1'>Demo</span>
+                    </a>
+                    <a
+                      href={github}
+                      target='_blank'
+                      rel='noopener noreferrer'
+                      className='hover:text-primary no-underline flex flex-row items-center'
+                    >
+                      <BrandGithub size={32} />
+                      <span className='ml-1'>GitHub</span>
+                    </a>
+                  </div>
+                </div>
                 <a
-                  href={website}
+                  href={demo}
                   target='_blank'
                   rel='noopener noreferrer'
-                  className='hover:text-primary no-underline flex flex-row items-center'
+                  className='flex flex-row w-full md:w-fit justify-center hover:scale-105 transition-all duration-250 ease-in-out'
                 >
-                  <ExternalLink size={32} />
-                  <span className='ml-1'>Demo</span>
-                </a>
-                <a
-                  href={github}
-                  target='_blank'
-                  rel='noopener noreferrer'
-                  className='hover:text-primary no-underline flex flex-row items-center'
-                >
-                  <BrandGithub size={32} />
-                  <span className='ml-1'>GitHub</span>
+                  <Image
+                    src={img}
+                    alt={name}
+                    width={400}
+                    height={300}
+                    className='rounded-lg'
+                  />
                 </a>
               </div>
+              {index !== array.length - 1 && (
+                <div className='divider py-4 md:py-8' />
+              )}
             </div>
-            <div className='flex flex-row w-full md:w-fit justify-center'>
-              <Image
-                src={img}
-                alt={name}
-                width={320}
-                height={320}
-                className='rounded-lg'
-              />
-            </div>
-          </div>
-        ))}
-        <div className='flex flex-row justify-center items-center w-full'>
+          )
+        )}
+
+        <div className='flex flex-row justify-center items-center w-full mt-12'>
           <a
             href='https://github.com/aleksastojsic'
             target='_blank'
