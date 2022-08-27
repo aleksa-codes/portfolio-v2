@@ -102,6 +102,10 @@ class MyDocument extends Document {
               href='https://fonts.googleapis.com/css2?family=Roboto&display=swap'
               rel='stylesheet'
             /> */}
+          <meta
+            name='google-site-verification'
+            content='5Bs5tGO6oss24P4orTo__H9R_w2YmD7uIGrd-Az8Nn8'
+          />
           <link rel='preconnect' href='https://fonts.googleapis.com' />
           <link
             rel='preconnect'
