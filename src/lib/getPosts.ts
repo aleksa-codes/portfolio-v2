@@ -1,7 +1,6 @@
 import fs from 'fs';
 import matter from 'gray-matter';
 import path from 'path';
-// import { POSTS_PATH } from '../utils/mdxUtils';
 
 const getPost = () => {
   const files = fs.readdirSync(path.join('src', 'posts'));
