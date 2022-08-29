@@ -46,53 +46,51 @@ function Post({ data, content }: { data: any; content: any }) {
   if (!isSSR) {
     return (
       <PageTransition>
-        <div className='z-10'>
-          <Seo title={data.title} description={data.desc} />
-          <div className='flex justify-center'>
-            <div className='flex flex-col py-6 prose lg:prose-lg min-w-full'>
-              {data.img && data.imgWidth && data.imgHeight ? (
+        <Seo title={data.title} description={data.desc} />
+        <div className='flex justify-center'>
+          <div className='flex flex-col py-6 prose lg:prose-lg min-w-full'>
+            {data.img && data.imgWidth && data.imgHeight ? (
+              <figure className='flex justify-center'>
+                <Image
+                  src={data.img}
+                  alt={data.title}
+                  width={data.imgWidth}
+                  height={data.imgHeight}
+                  className='rounded bg-base-200'
+                />
+              </figure>
+            ) : (
+              data.img && (
                 <figure className='flex justify-center'>
                   <Image
                     src={data.img}
                     alt={data.title}
-                    width={data.imgWidth}
-                    height={data.imgHeight}
                     className='rounded bg-base-200'
                   />
                 </figure>
-              ) : (
-                data.img && (
-                  <figure className='flex justify-center'>
-                    <Image
-                      src={data.img}
-                      alt={data.title}
-                      className='rounded bg-base-200'
-                    />
-                  </figure>
-                )
+              )
+            )}
+            <h1>{data.title}</h1>
+            <div className='flex flex-row items-center gap-2 -mt-8 text-lg text-gray-500'>
+              <span>
+                <time dateTime={data.date}>{formatDate(data.date)}</time>
+              </span>
+              {data.author && (
+                <span className='text-sm text-base-content/70'>
+                  By {data.author}
+                </span>
               )}
-              <h1>{data.title}</h1>
-              <div className='flex flex-row items-center gap-2 -mt-8 text-lg text-gray-500'>
-                <span>
-                  <time dateTime={data.date}>{formatDate(data.date)}</time>
-                </span>
-                {data.author && (
-                  <span className='text-sm text-base-content/70'>
-                    By {data.author}
-                  </span>
-                )}
-                <span>•</span>
+              <span>•</span>
 
-                <span>
-                  <div>{readTime(data)}</div>
-                </span>
-                <span>
-                  <Book size={24} strokeWidth={1.5} />
-                </span>
-              </div>
-              <div>
-                <MDXRemote {...content} components={{ ...components, CH }} />
-              </div>
+              <span>
+                <div>{readTime(data)}</div>
+              </span>
+              <span>
+                <Book size={24} strokeWidth={1.5} />
+              </span>
+            </div>
+            <div>
+              <MDXRemote {...content} components={{ ...components, CH }} />
             </div>
           </div>
         </div>

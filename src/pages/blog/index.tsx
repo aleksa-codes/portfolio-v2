@@ -18,8 +18,8 @@ const readTime = (post: any) => {
 const Blog = ({ posts }: { posts: any }) => {
   return (
     <PageTransition>
-      <div className='z-10'>
-        <Seo title={title} />
+      <Seo title={title} />
+      <div className='pb-8'>
         <h1>Blog</h1>
         {posts.map((post: any) => (
           <div

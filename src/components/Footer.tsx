@@ -28,7 +28,7 @@ const Footer = () => {
     <footer
       className={`${
         resolvedTheme === 'light' ? 'text-gray-400' : 'text-gray-200'
-      } w-full md:-mt-16 lg:-mt-24 -z-10`}
+      } w-full md:-mt-16 lg:-mt-24`}
       aria-labelledby='footer-heading'
     >
       <svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1440 200'>
