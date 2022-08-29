@@ -119,7 +119,7 @@ const Projects = () => {
           )
         )}
 
-        <div className='flex flex-row justify-center items-center w-full pt-8 pb-20'>
+        <div className='flex flex-row justify-center items-center w-full pt-12 md:pt-16 pb-20'>
           <a
             href='https://github.com/aleksastojsic'
             target='_blank'
