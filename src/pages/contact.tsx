@@ -82,7 +82,7 @@ const Contact = () => {
               </div>
             </label>
           </div>
-          <div className='flex flex-row items-center justify-start gap-2 w-full pt-2 md:pt-4 pb-20'>
+          <div className='flex flex-row items-center justify-start gap-2 w-full pt-2 md:pt-4'>
             <button type='submit' className='btn btn-primary gap-1'>
               <Send size={20} strokeWidth={2} className='mb-1' /> Send
             </button>

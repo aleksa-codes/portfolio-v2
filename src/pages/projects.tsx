@@ -101,7 +101,7 @@ const Projects = () => {
                   href={demo}
                   target='_blank'
                   rel='noopener noreferrer'
-                  className='flex flex-row w-full md:w-fit justify-center hover:scale-105 transition-all duration-250 ease-in-out'
+                  className='flex flex-row w-full md:w-fit justify-center hover:scale-105 transition-all duration-300 ease-in-out'
                 >
                   <Image
                     src={img}
@@ -119,7 +119,7 @@ const Projects = () => {
           )
         )}
 
-        <div className='flex flex-row justify-center items-center w-full pt-12 md:pt-16 pb-20'>
+        <div className='flex flex-row justify-center items-center w-full pt-12 md:pt-16'>
           <a
             href='https://github.com/aleksastojsic'
             target='_blank'

@@ -28,7 +28,7 @@ const Footer = () => {
     <footer
       className={`${
         resolvedTheme === 'light' ? 'text-gray-400' : 'text-gray-200'
-      } w-full md:-mt-16 lg:-mt-24`}
+      } w-full`}
       aria-labelledby='footer-heading'
     >
       <svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1440 200'>
@@ -54,16 +54,41 @@ const Footer = () => {
                 resolvedTheme === 'light' ? 'text-slate-600' : 'text-gray-300'
               } font-medium`}
             >
-              © 2022{' '}
+              © 2022 Code by{' '}
               <a
                 href='https://github.com/aleksastojsic'
                 target='_blank'
                 rel='noopener noreferrer'
                 className='hover:underline'
               >
-                aleksa.codes
+                aleksa
               </a>{' '}
-              • All Rights Reserved.
+              • Inspired by{' '}
+              <a
+                href='https://github.com/saadeghi/daisy-blog'
+                target='_blank'
+                rel='noopener noreferrer'
+                className='hover:underline'
+              >
+                Daisy Blog
+              </a>
+              {/* <a
+                href='https://nextjs.org/'
+                target='_blank'
+                rel='noopener noreferrer'
+                className='hover:underline'
+              >
+                Next.js
+              </a>{' '}
+              &{' '}
+              <a
+                href='https://vercel.com/'
+                target='_blank'
+                rel='noopener noreferrer'
+                className='hover:underline'
+              >
+                Vercel
+              </a> */}
             </div>
             <div
               className={`flex md:flex-row mx-auto text-center justify-center ${

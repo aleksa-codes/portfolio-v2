@@ -21,41 +21,37 @@ const Blog = ({ posts }: { posts: any }) => {
       <Seo title={title} />
       <div className='pb-8'>
         <h1>Blog</h1>
-        {posts.map((post: any) => (
-          <div
-            key={post.slug}
-            className='py-4 flex flex-col md:flex-row-reverse gap-6 md:gap-10 items-center md:items-start'
-          >
+        <div className='flex flex-col gap-4'>
+          {posts.map((post: any) => (
             <a
               href={`/blog/${post.slug}`}
-              className='shrink-0 hover:-translate-y-1 transition-transform duration-200 ease-in-out'
+              key={post.slug}
+              className='p-2 flex flex-col sm:flex-row-reverse gap-6 md:gap-16 items-center md:items-start rounded-lg shadow-sm hover:shadow-lg hover:-translate-y-1 transition-all duration-300 ease-in-out cursor-pointer no-underline border border-base-content border-solid border-opacity-25'
             >
-              <Image
-                src={post.img}
-                alt={title}
-                width={160}
-                height={160}
-                className='w-20 h-20 md:w-40 md:h-40 rounded bg-base-200 object-cover'
-              />
-            </a>
-            <div className='flex flex-col w-full'>
-              <a
-                className='hover:underline no-underline'
-                href={`/blog/${post.slug}`}
-              >
-                <div className='text-2xl font-bold'>{post.title}</div>
-              </a>
-              <div className='flex flex-row items-center gap-1 text-sm text-gray-500 font-semibold'>
-                <time>{formatDate(post.date)}</time>
-                <span>•</span>
-                <span>{readTime(post)}</span>
-                <Book size={16} strokeWidth={2.5} />
+              <div className='shrink-0 flex flex-row items-center justify-center md:flex-col'>
+                <Image
+                  src={post.img}
+                  alt={title}
+                  width={160}
+                  height={160}
+                  className='w-20 h-20 md:w-40 md:h-40 rounded bg-base-200 object-cover'
+                />
               </div>
+              <div className='flex flex-col w-full'>
+                <div className='text-2xl font-bold'>{post.title}</div>
 
-              <p className='text-sm text-base-content/70'>{post.desc}</p>
-            </div>
-          </div>
-        ))}
+                <div className='flex flex-row items-center gap-1 text-sm text-gray-500 font-semibold'>
+                  <time>{formatDate(post.date)}</time>
+                  <span>•</span>
+                  <span>{readTime(post)}</span>
+                  <Book size={20} strokeWidth={2.5} className='mb-[1px]' />
+                </div>
+
+                <p className='text-sm text-base-content/70'>{post.desc}</p>
+              </div>
+            </a>
+          ))}
+        </div>
       </div>
     </PageTransition>
   );

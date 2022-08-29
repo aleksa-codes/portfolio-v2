@@ -1,25 +1,14 @@
-import { useEffect, useState } from 'react';
 import Link from 'next/link';
 import PageTransition from '../components/PageTransition';
 import Seo from '../components/SEO';
 
 export default function Custom404() {
-  const [isSSR, setIsSSR] = useState(true);
-
-  useEffect(() => {
-    setIsSSR(false);
-  }, []);
-
-  if (isSSR) {
-    return null;
-  }
-
   return (
     <PageTransition>
       <Seo title='404' />
-      <div className='flex flex-col items-center mt-24 lg:mt-24 font-bold h-full'>
+      <div className='flex flex-col justify-start items-center font-bold h-full'>
         <div className='text-8xl'>404</div>
-        <div className='text-4xl my-4'>Page not found</div>
+        <div className='text-4xl my-4'>Page not found :(</div>
         <button className='mt-5'>
           <Link href='/'>
             <a className='relative inline-block text-sm font-medium text-[#FF6A3D] group active:text-orange-500 focus:outline-none focus:ring'>
