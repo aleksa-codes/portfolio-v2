@@ -86,7 +86,7 @@ const Contact = () => {
             <button type='submit' className='btn btn-primary gap-1'>
               <Send size={20} strokeWidth={2} className='mb-1' /> Send
             </button>
-            <button type='reset' className='btn btn-accent gap-1'>
+            <button type='reset' className='btn gap-1'>
               <Eraser size={20} strokeWidth={2} className='mb-1' /> Clear
             </button>
           </div>
