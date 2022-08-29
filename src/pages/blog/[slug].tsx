@@ -6,11 +6,13 @@ import { formatDate } from '../../lib/formatDate';
 import { remarkCodeHike } from '@code-hike/mdx';
 import { CH } from '@code-hike/mdx/components';
 import theme from 'shiki/themes/one-dark-pro.json';
+import remarkGfm from 'remark-gfm';
 import Seo from '../../components/SEO';
 import { useEffect, useState } from 'react';
 import { Book } from 'tabler-icons-react';
 import Image from 'next/image';
 import { GetStaticPaths } from 'next/types';
+import PageTransition from '../../components/PageTransition';
 
 const readingTime = require('reading-time/lib/reading-time');
 
@@ -44,56 +46,58 @@ function Post({ data, content }: { data: any; content: any }) {
   // if not isSSR, render the content
   if (!isSSR) {
     return (
-      <div>
-        <Seo title={data.title} description={data.desc} />
-        <div className='flex justify-center'>
-          <div className='py-6 prose lg:prose-lg min-w-full'>
-            {data.img && data.imgWidth && data.imgHeight ? (
-              <figure className='flex justify-center'>
-                <Image
-                  src={data.img}
-                  alt={data.title}
-                  width={data.imgWidth}
-                  height={data.imgHeight}
-                  className='rounded bg-base-200'
-                />
-              </figure>
-            ) : (
-              data.img && (
+      <PageTransition>
+        <div className='z-10'>
+          <Seo title={data.title} description={data.desc} />
+          <div className='flex justify-center'>
+            <div className='py-6 prose lg:prose-lg min-w-full'>
+              {data.img && data.imgWidth && data.imgHeight ? (
                 <figure className='flex justify-center'>
                   <Image
                     src={data.img}
                     alt={data.title}
+                    width={data.imgWidth}
+                    height={data.imgHeight}
                     className='rounded bg-base-200'
                   />
                 </figure>
-              )
-            )}
-            <h1>{data.title}</h1>
-            <div className='flex flex-row items-center gap-2 -mt-8 mb-2'>
-              <span className='text-lg text-gray-500'>
-                <time dateTime={data.date}>{formatDate(data.date)}</time>
-              </span>
-              {data.author && (
-                <span className='text-sm text-base-content/70'>
-                  By {data.author}
-                </span>
+              ) : (
+                data.img && (
+                  <figure className='flex justify-center'>
+                    <Image
+                      src={data.img}
+                      alt={data.title}
+                      className='rounded bg-base-200'
+                    />
+                  </figure>
+                )
               )}
-              <span>•</span>
+              <h1>{data.title}</h1>
+              <div className='flex flex-row items-center gap-2 -mt-8 mb-2'>
+                <span className='text-lg text-gray-500'>
+                  <time dateTime={data.date}>{formatDate(data.date)}</time>
+                </span>
+                {data.author && (
+                  <span className='text-sm text-base-content/70'>
+                    By {data.author}
+                  </span>
+                )}
+                <span>•</span>
 
-              <span className='text-lg text-gray-500'>
-                <div>{readTime(data)}</div>
-              </span>
-              <span className='text-gray-500 mb-[2px]'>
-                <Book size={24} strokeWidth={1.5} />
-              </span>
-            </div>
-            <div>
-              <MDXRemote {...content} components={{ ...components, CH }} />
+                <span className='text-lg text-gray-500'>
+                  <div>{readTime(data)}</div>
+                </span>
+                <span className='text-gray-500 mb-[1px]'>
+                  <Book size={24} strokeWidth={1.5} />
+                </span>
+              </div>
+              <div>
+                <MDXRemote {...content} components={{ ...components, CH }} />
+              </div>
             </div>
           </div>
         </div>
-      </div>
+      </PageTransition>
     );
   }
   return null;
@@ -120,7 +124,10 @@ export const getStaticProps = async ({
   const post = await getPost(params.slug);
   const mdxSource = await serialize(post.content, {
     mdxOptions: {
-      remarkPlugins: [[remarkCodeHike, { autoImport: false, theme }]],
+      remarkPlugins: [
+        [remarkCodeHike, { autoImport: false, theme }],
+        remarkGfm
+      ],
       useDynamicImport: true
     }
   });

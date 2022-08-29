@@ -14,7 +14,7 @@ const days = [
 
 const Footer = () => {
   const [mounted, setMounted] = useState(false);
-  const { theme } = useTheme();
+  const { resolvedTheme } = useTheme();
 
   useEffect(() => {
     setMounted(true);
@@ -27,27 +27,31 @@ const Footer = () => {
   return (
     <footer
       className={`${
-        theme === 'light' ? 'text-gray-400' : 'text-gray-200'
-      } w-full md:-mt-16 lg:-mt-24`}
+        resolvedTheme === 'light' ? 'text-gray-400' : 'text-gray-200'
+      } w-full md:-mt-16 lg:-mt-24 -z-10`}
       aria-labelledby='footer-heading'
     >
       <svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1440 200'>
         <path
           className={`${
-            theme === 'light' ? 'text-slate-200' : 'text-gray-800'
+            resolvedTheme === 'light' ? 'text-slate-200' : 'text-gray-800'
           } scale-y-75`}
           fill='currentColor'
           fillOpacity='1'
           d='M0,192L34.3,181.3C68.6,171,137,149,206,160C274.3,171,343,213,411,213.3C480,213,549,171,617,165.3C685.7,160,754,192,823,218.7C891.4,245,960,267,1029,256C1097.1,245,1166,203,1234,186.7C1302.9,171,1371,181,1406,186.7L1440,192L1440,320L1405.7,320C1371.4,320,1303,320,1234,320C1165.7,320,1097,320,1029,320C960,320,891,320,823,320C754.3,320,686,320,617,320C548.6,320,480,320,411,320C342.9,320,274,320,206,320C137.1,320,69,320,34,320L0,320Z'
         ></path>
       </svg>
-      <div className={`${theme === 'light' ? 'bg-slate-200' : 'bg-gray-800'}`}>
+      <div
+        className={`${
+          resolvedTheme === 'light' ? 'bg-slate-200' : 'bg-gray-800'
+        }`}
+      >
         <div className='max-w-5xl mx-auto py-8 px-4 lg:px-0 grid grid-cols-1 md:grid-cols-3'>
           <div className=''></div>
           <div className='text-sm text-center mb-2 md:mb-0'>
             <div
               className={`mb-2 ${
-                theme === 'light' ? 'text-slate-600' : 'text-gray-300'
+                resolvedTheme === 'light' ? 'text-slate-600' : 'text-gray-300'
               } font-medium`}
             >
               © 2022{' '}
@@ -63,7 +67,7 @@ const Footer = () => {
             </div>
             <div
               className={`flex md:flex-row mx-auto text-center justify-center ${
-                theme === 'light' ? 'text-slate-500' : 'text-gray-500'
+                resolvedTheme === 'light' ? 'text-slate-500' : 'text-gray-500'
               }`}
             >
               Have a great {days[new Date().getDay()]}!
