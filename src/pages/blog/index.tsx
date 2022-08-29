@@ -44,7 +44,7 @@ const Blog = ({ posts }: { posts: any }) => {
                   <time>{formatDate(post.date)}</time>
                   <span>•</span>
                   <span>{readTime(post)}</span>
-                  <Book size={20} strokeWidth={2.5} className='mb-[1px]' />
+                  <Book size={20} strokeWidth={2.5} />
                 </div>
 
                 <p className='text-sm text-base-content/70'>{post.desc}</p>
