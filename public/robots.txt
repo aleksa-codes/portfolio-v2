@@ -1,9 +1,0 @@
-# *
-User-agent: *
-Allow: /
-
-# Host
-Host: https://aleksa.vercel.app
-
-# Sitemaps
-Sitemap: https://aleksa.vercel.app/sitemap.xml
