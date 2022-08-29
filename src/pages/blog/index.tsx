@@ -1,10 +1,19 @@
 import getPosts from '../../lib/getPosts';
+import getPost from '../../lib/getPost';
 import { formatDate } from '../../lib/formatDate';
 import PageTransition from '../../components/PageTransition';
+import readingTime from 'reading-time';
+import { Book } from 'tabler-icons-react';
 import Seo from '../../components/SEO';
 import Image from 'next/image';
 
 const title = 'Blog';
+
+const readTime = (post: any) => {
+  const stats = readingTime(post.content);
+  // round minutes and return as string
+  return `${Math.round(stats.minutes)} min`;
+};
 
 const Blog = ({ posts }: { posts: any }) => {
   return (
@@ -29,16 +38,20 @@ const Blog = ({ posts }: { posts: any }) => {
                 className='w-20 h-20 md:w-40 md:h-40 rounded bg-base-200 object-cover'
               />
             </a>
-            <div className='flex flex-col gap-4 w-full'>
+            <div className='flex flex-col w-full'>
               <a
                 className='hover:underline no-underline'
                 href={`/blog/${post.slug}`}
               >
                 <div className='text-2xl font-bold'>{post.title}</div>
               </a>
-              <time className='text-gray-500 text-sm -mt-2 -mb-4 font-semibold'>
-                {formatDate(post.date)}
-              </time>
+              <div className='flex flex-row items-center gap-1 text-sm text-gray-500 font-semibold'>
+                <time>{formatDate(post.date)}</time>
+                <span>•</span>
+                <span>{readTime(post)}</span>
+                <Book size={16} strokeWidth={2.5} />
+              </div>
+
               <p className='text-sm text-base-content/70'>{post.desc}</p>
             </div>
           </div>
@@ -57,9 +70,13 @@ export const getStaticProps = async () => {
     return new Date(b.date).getTime() - new Date(a.date).getTime();
   });
 
+  const getPostPromises = sortedPosts.map((post: any) => getPost(post.slug));
+
+  const postsWithContent = await Promise.all(getPostPromises);
+
   return {
     props: {
-      posts: sortedPosts
+      posts: postsWithContent
     }
   };
 };

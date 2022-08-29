@@ -84,10 +84,10 @@ const Contact = () => {
               </label>
             </div>
             <div className='flex flex-row items-center justify-start gap-2 w-full my-2'>
-              <button type='submit' className='btn btn-primary'>
+              <button type='submit' className='btn btn-primary gap-1'>
                 <Send size={20} strokeWidth={2} className='mb-1' /> Send
               </button>
-              <button type='reset' className='btn btn-secondary'>
+              <button type='reset' className='btn btn-accent gap-1'>
                 <Eraser size={20} strokeWidth={2} className='mb-1' /> Clear
               </button>
             </div>

@@ -46,11 +46,11 @@ const Home: NextPage = () => {
         <h1 className='mb-[-48px] lg:mb-[-48px]'>My name is Aleksa</h1>
         <h2>
           I design and build{' '}
-          <span className='highlight'>things for the web.</span>
+          <span className='highlight-heading'>things for the web.</span>
         </h2>
-        <h3 className='opacity-80 text-md'>
+        <div className='opacity-80 text-xl font-semibold'>
           Computer Science Student and Web Developer. Based in Belgrade.
-        </h3>
+        </div>
       </div>
     </PageTransition>
   );

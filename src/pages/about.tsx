@@ -22,17 +22,17 @@ const About = () => {
           at Singidunum University and completed many online courses alongside.
         </p>
         <p>
-          Passionate, energetic, and self-motivated junior{' '}
-          <span className='highlight'>full-stack software developer</span>{' '}
-          turning ideas into applications. My ambitions are to stay on the
+          Passionate and self-motivated junior{' '}
+          <span className='highlight'>full-stack software developer</span> eager
+          to turn ideas into applications. My ambitions are to stay on the
           leading edge of the <span className='highlight'>web development</span>{' '}
           industry and find new learning opportunities or projects to keep
           improving rapidly as a developer.
         </p>
         <p>
           I work to create modern, responsive websites and applications that
-          suit the wants and needs of my clients and I am eager to solve
-          problems through innovative solutions and collaboration.
+          suit the wants and needs of my clients while solving problems through
+          innovative solutions and collaboration.
         </p>
         <p>
           Out of the office, you will find me traveling, dreaming of basketball,

@@ -13,8 +13,7 @@ import { Book } from 'tabler-icons-react';
 import Image from 'next/image';
 import { GetStaticPaths } from 'next/types';
 import PageTransition from '../../components/PageTransition';
-
-const readingTime = require('reading-time/lib/reading-time');
+import readingTime from 'reading-time';
 
 const ResponsiveImage = (props: any) => (
   <Image
@@ -50,7 +49,7 @@ function Post({ data, content }: { data: any; content: any }) {
         <div className='z-10'>
           <Seo title={data.title} description={data.desc} />
           <div className='flex justify-center'>
-            <div className='py-6 prose lg:prose-lg min-w-full'>
+            <div className='flex flex-col py-6 prose lg:prose-lg min-w-full'>
               {data.img && data.imgWidth && data.imgHeight ? (
                 <figure className='flex justify-center'>
                   <Image
@@ -73,8 +72,8 @@ function Post({ data, content }: { data: any; content: any }) {
                 )
               )}
               <h1>{data.title}</h1>
-              <div className='flex flex-row items-center gap-2 -mt-8 mb-2'>
-                <span className='text-lg text-gray-500'>
+              <div className='flex flex-row items-center gap-2 -mt-8 text-lg text-gray-500'>
+                <span>
                   <time dateTime={data.date}>{formatDate(data.date)}</time>
                 </span>
                 {data.author && (
@@ -84,10 +83,10 @@ function Post({ data, content }: { data: any; content: any }) {
                 )}
                 <span>•</span>
 
-                <span className='text-lg text-gray-500'>
+                <span>
                   <div>{readTime(data)}</div>
                 </span>
-                <span className='text-gray-500 mb-[1px]'>
+                <span>
                   <Book size={24} strokeWidth={1.5} />
                 </span>
               </div>

@@ -22,6 +22,23 @@
   transition: box-shadow 0.3s ease-out 0s;
 }
 
+.highlight-heading:hover {
+  box-shadow: #add9f4 0px -4rem 0px inset;
+}
+.highlight-heading {
+  box-shadow: #add9f4 0px -1rem 0px inset;
+  transition: box-shadow 0.3s ease-out 0s;
+}
+
+[data-theme='night'] .highlight-heading:hover {
+  box-shadow: #463aa1 0px -4rem 0px inset;
+}
+
+[data-theme='night'] .highlight-heading {
+  box-shadow: #463aa1 0px -1rem 0px inset;
+  transition: box-shadow 0.3s ease-out 0s;
+}
+
 /* End for custom component styles */
 
 /* Start purging */

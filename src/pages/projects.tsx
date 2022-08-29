@@ -125,7 +125,7 @@ const Projects = () => {
               href='https://github.com/aleksastojsic'
               target='_blank'
               rel='noopener noreferrer'
-              className='btn btn-secondary flex flex-row items-center justify-center text-primary-content'
+              className='btn btn-secondary flex flex-row items-center justify-center'
             >
               <BrandGithub size={24} />
               <span className='ml-2 mt-1 uppercase'>View more on GitHub</span>
