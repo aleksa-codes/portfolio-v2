@@ -26,7 +26,7 @@ const Blog = ({ posts }: { posts: any }) => {
             <a
               href={`/blog/${post.slug}`}
               key={post.slug}
-              className='p-2 flex flex-col sm:flex-row-reverse gap-6 md:gap-16 items-center md:items-start rounded-lg shadow-sm hover:shadow-lg hover:-translate-y-1 transition-all duration-300 ease-in-out cursor-pointer no-underline border border-base-content border-solid border-opacity-25'
+              className='p-2 flex flex-col sm:flex-row-reverse gap-6 md:gap-16 items-center md:items-start rounded-lg shadow-sm hover:shadow-md hover:-translate-y-1 transition-all duration-300 ease-in-out cursor-pointer no-underline border border-base-content border-solid border-opacity-25'
             >
               <div className='shrink-0 flex flex-row items-center justify-center md:flex-col'>
                 <Image
@@ -44,7 +44,7 @@ const Blog = ({ posts }: { posts: any }) => {
                   <time>{formatDate(post.date)}</time>
                   <span>•</span>
                   <span>{readTime(post)}</span>
-                  <Book size={20} strokeWidth={2.5} />
+                  <Book size={20} strokeWidth={2} />
                 </div>
 
                 <p className='text-sm text-base-content/70'>{post.desc}</p>
