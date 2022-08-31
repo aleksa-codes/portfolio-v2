@@ -101,7 +101,7 @@ const Projects = () => {
                   href={demo}
                   target='_blank'
                   rel='noopener noreferrer'
-                  className='flex flex-row w-full md:w-fit justify-center rounded-lg hover:shadow-xl hover:-translate-y-1 transition-all duration-200 ease-in-out'
+                  className='flex flex-row w-full md:w-fit justify-center rounded-lg hover:shadow-xl hover:-translate-y-1 transition-all duration-200 ease-out'
                 >
                   <Image
                     src={img}
