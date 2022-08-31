@@ -48,7 +48,7 @@ const Home: NextPage = () => {
         <span className='highlight-heading'>things for the web.</span>
       </h2>
       <div className='opacity-80 text-xl font-semibold'>
-        Computer Science Student and Web Developer. Based in Belgrade.
+        Computer Science Student and Web Developer.
       </div>
     </PageTransition>
   );
