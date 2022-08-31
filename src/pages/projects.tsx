@@ -101,14 +101,14 @@ const Projects = () => {
                   href={demo}
                   target='_blank'
                   rel='noopener noreferrer'
-                  className='flex flex-row w-full md:w-fit justify-center shadow-md hover:shadow-lg hover:-translate-y-1 transition-all duration-200 ease-in-out rounded-lg'
+                  className='flex flex-row w-full md:w-fit justify-center rounded-lg'
                 >
                   <Image
                     src={img}
                     alt={name}
                     width={400}
                     height={300}
-                    className='rounded-lg'
+                    className='rounded-lg hover:shadow-lg hover:-translate-y-1 transition-all duration-200 ease-in-out'
                   />
                 </a>
               </div>
