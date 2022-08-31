@@ -122,7 +122,7 @@ export const getStaticProps = async ({
   const mdxSource = await serialize(post.content, {
     mdxOptions: {
       remarkPlugins: [
-        [remarkCodeHike, { autoImport: false, theme }],
+        [remarkCodeHike, { autoImport: false, theme, showCopyButton: true }],
         remarkGfm
       ],
       useDynamicImport: true
