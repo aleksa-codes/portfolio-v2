@@ -10,7 +10,7 @@ const projects = [
     name: 'Project #1',
     desc: 'Laudantium iste repellat et. Et officiis corporis. At est placeat voluptas aut. Soluta dolor quae quae tempora. Voluptatibus quibusdam natus. Facilis ea repellendus expedita voluptatum rerum autem.',
     tech: ['HTML', 'CSS', 'JavaScript'],
-    github: 'https://github.com/aleksastojsic',
+    github: 'https://github.com/aleksa-codes',
     demo: 'https://example.com',
     img: 'https://picsum.photos/800/600?random=24'
   },
@@ -18,7 +18,7 @@ const projects = [
     name: 'Project #2',
     desc: 'Laudantium iste repellat et. Et officiis corporis. At est placeat voluptas aut. Soluta dolor quae quae tempora. Voluptatibus quibusdam natus. Facilis ea repellendus expedita voluptatum rerum autem.',
     tech: ['HTML', 'CSS', 'JavaScript'],
-    github: 'https://github.com/aleksastojsic',
+    github: 'https://github.com/aleksa-codes',
     demo: 'https://example.com',
     img: 'https://picsum.photos/800/600?random=8'
   },
@@ -26,7 +26,7 @@ const projects = [
     name: 'Project #3',
     desc: 'Laudantium iste repellat et. Et officiis corporis. At est placeat voluptas aut. Soluta dolor quae quae tempora.',
     tech: ['HTML', 'CSS', 'JavaScript'],
-    github: 'https://github.com/aleksastojsic',
+    github: 'https://github.com/aleksa-codes',
     demo: 'https://example.com',
     img: 'https://picsum.photos/800/600?random=3'
   }
@@ -121,7 +121,7 @@ const Projects = () => {
 
         <div className='flex flex-row justify-center items-center w-full pt-12 md:pt-16'>
           <a
-            href='https://github.com/aleksastojsic'
+            href='https://github.com/aleksa-codes'
             target='_blank'
             rel='noopener noreferrer'
             className='btn btn-secondary flex flex-row items-center justify-center'

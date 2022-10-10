@@ -56,7 +56,7 @@ const Footer = () => {
             >
               © 2022 Code by{' '}
               <a
-                href='https://github.com/aleksastojsic'
+                href='https://github.com/aleksa-codes'
                 target='_blank'
                 rel='noopener noreferrer'
                 className='hover:underline'
@@ -132,7 +132,7 @@ const Footer = () => {
             <div className='text-slate-900 dark:text-white'>
               <a
                 target='_blank'
-                href='https://github.com/aleksastojsic'
+                href='https://github.com/aleksa-codes'
                 rel='noreferrer'
               >
                 <svg
